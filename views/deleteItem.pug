@@ -1,0 +1,9 @@
+extends layout
+
+block content 
+    h1 Delete item
+    p Are you sure you want to delete this item?
+    p ID: #{item.id}
+    p Name: #{item.name}
+    form(method='POST')
+        input(type='submit' value='Delete')

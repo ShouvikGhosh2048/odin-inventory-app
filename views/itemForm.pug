@@ -1,0 +1,30 @@
+extends layout 
+
+block content 
+    h1 #{formType} item
+    form(method='POST')
+        div(class='labelAndField') 
+            label(for='name') Name:
+            input(id='name',name='name',value=item ? item.name : "",required)
+        div(class='labelAndField')
+            label(for='description') Description:
+            textarea(id='description',name='description',rows="7")= (item && item.description) ? item.description : "" 
+        div 
+            label(for='categories') Categories: 
+            div(class='categoriesContainer')
+                for category in categories 
+                    span(class='category')
+                        input(type='checkbox',name='categories',value=category._id,id=category._id,checked=category.checked)
+                        label(for=category._id)=  category.name
+        div(class='labelAndField')
+            label(for='price') Price:
+            input(type='number',id='price',name='price',min='0',step='0.01',value=item ? item.price : "",required)
+        div(class='labelAndField')
+            label(for='numberInStock') Number in stock:
+            input(type='number',id='numberInStock',name='numberInStock',min='0',step='1',value=item ? item.numberInStock : "",required)
+        div(class='submitContainer')
+            input(type='submit',value=formType)
+    if errors 
+        ul 
+            for error in errors 
+                li= error.msg 

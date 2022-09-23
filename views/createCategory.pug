@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+    h1 Create Category
+    form(method='POST')
+        div(class='labelAndField')
+            label(for='name') Name: 
+            input(id='name',name='name',value=category === undefined ? "" : category.name,required)
+        div(class='labelAndField')
+            label(for='description') Description:
+            textarea(id='description',name='description',rows="7")= (category === undefined || !category.description) ? "" : category.description
+        div(class='submitContainer')
+            input(type='submit')
+        if errors 
+            ul
+                for error in errors 
+                    li= error.msg
+                

@@ -1,0 +1,57 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: larger;
+}
+
+h2 {
+  font-size: large;
+}
+
+nav a {
+  margin-right: 10px;
+}
+
+form {
+  min-width: 300px;
+  max-width: 500px;
+}
+
+form > div {
+  margin: 15px 0;
+}
+
+.labelAndField {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.labelAndField input, .labelAndField textarea {
+  width: 200px;
+}
+
+.labelAndField textarea{
+  resize: vertical;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category {
+  margin: 1px 10px;
+}
+
+.submitContainer {
+  display: flex;
+  justify-content: center;
+}
+
+input[type='submit'] {
+  padding: 5px 10px;
+}

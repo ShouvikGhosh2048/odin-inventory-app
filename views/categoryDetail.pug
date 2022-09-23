@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+    h1 Category detail 
+    p Name: #{category.name}
+    if category.description 
+        p Description: #{category.description}
+    if items.length > 0
+        h2 Items
+        ul 
+            for item in items 
+                li 
+                    a(href=item.url)= item.name

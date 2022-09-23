@@ -1,0 +1,11 @@
+extends layout 
+
+block content 
+    h1 Items
+    if items.length > 0
+        ul 
+            for item in items 
+                li 
+                    a(href=item.url)= item.name 
+    else 
+        p No items present in the inventory.
